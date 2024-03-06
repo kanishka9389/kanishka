@@ -1,0 +1,56 @@
+que 8 write a program to display the first occurrence of number divisible by k in the list. 
+
+
+
+
+      // C++ program to find nth number that contains
+// the digit k or divisible by k.
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function for checking if digit k
+// is in n or not
+int checkdigit(int n, int k)
+{
+while (n)
+{
+// finding remainder
+int rem = n % 10;
+
+// if digit found
+if (rem == k)
+return 1;
+
+n = n / 10;
+}
+
+return 0;
+}
+
+// Function for finding nth number
+int findNthNumber(int n, int k)
+{
+// since k is the first which satisfy the
+// criteria, so consider it in count making count = 1
+// and starting from i = k + 1
+for (int i = k + 1, count = 1; count < n; i++)
+{
+// checking that the number contain
+// k digit or divisible by k
+if (checkdigit(i, k) || (i % k == 0))
+count++;
+
+if (count == n)
+return i;
+}
+
+return -1;
+}
+
+// Driver code
+int main()
+{
+int n = 10, k = 2;
+cout << findNthNumber(n, k) << endl;
+return 0;
+}

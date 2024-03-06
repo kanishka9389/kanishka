@@ -1,0 +1,16 @@
+que13  write a program to print all the name from list whose length is greater than 6.
+         
+        weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+         # Use the 'filter()' function with a lambda function to filter days with a length of 6 characters
+
+         # The lambda function checks the length of each day and keeps only the days with a length of 6
+
+          # Empty strings ('') are filtered out to keep only days with a length of 6 characters
+
+          days = filter(lambda day: day if len(day) == 6 else '', weekdays)
+
+          # Iterate through the filtered days and print each day that has a length of 6 characters
+
+          for d in days:
+print(d)

@@ -1,0 +1,22 @@
+que15  write a program  to check a number is binary .
+       
+               while True:
+try:
+x = int(input("Enter binary number"))
+except ValueError: # If value is not an integer
+print('Must be a binary number (contain only 1s and 0s)')
+else:
+# Iterates through all digits in x
+for i in str(x):
+if i in '10': # If digit is 1 or 0
+binary = True
+
+
+else:
+binary = False
+break
+if binary == False: print('Must be a binary number (contain only 1s and 0s)')
+else:
+break # Number is binary, you are safe to break from the loop
+print(x, "Is Binary")
+
